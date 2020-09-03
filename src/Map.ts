@@ -1,3 +1,5 @@
+import { Loader } from "@googlemaps/loader";
+
 export let map: google.maps.Map;
 let _places: google.maps.places.PlacesService;
 let _directions: google.maps.DirectionsService;
@@ -5,10 +7,11 @@ export let directionsRenderer: google.maps.DirectionsRenderer;
 export let _autoComplete: google.maps.places.AutocompleteService;
 
 
-export function initServices() {
+export async function initServices() {
+  const loader = new Loader({ apiKey: process.env.API_KEY!, libraries: ["places"] });
+  await loader.load();
   map = new google.maps.Map(document.getElementById("map")!, {
-    center: { lng: 138, lat: 38 },
-    zoom: 6,
+    center: { lng: 138, lat: 38 }, zoom: 6,
     streetViewControl: false,
     mapTypeControl: false,
     fullscreenControl: false,

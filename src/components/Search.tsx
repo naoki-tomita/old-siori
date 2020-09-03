@@ -54,8 +54,7 @@ const SelectedLocationList: React.FC = () => {
                     ? <MoreVertIcon />
                     : limitedRoute === "unknown"
                       ? <RadioButtonUncheckedIcon />
-                      : <RadioButtonCheckedIcon />
-                  }
+                      : <RadioButtonCheckedIcon />}
                 </IconButton>
               </ListItemIcon>
               <ListItemText>{it.name}</ListItemText>
