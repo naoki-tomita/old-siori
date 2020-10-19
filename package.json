@@ -23,7 +23,7 @@
   },
   "scripts": {
     "dev": "parcel -p 8080 index.html",
-    "build": "parcel build index.html --public-url ../dist"
+    "build": "parcel build index.html --public-url ./dist"
   },
   "devDependencies": {
     "typescript": "^3.8.3"
